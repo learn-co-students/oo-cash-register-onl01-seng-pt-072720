@@ -1,5 +1,3 @@
-require 'pry'
-
 class CashRegister
     attr_accessor :total, :discount, :last_transaction
 
@@ -37,7 +35,7 @@ class CashRegister
     end 
 end 
 
-# alternative solution:
+# Alternative Solution:
 # class CashRegister
 
 #     attr_accessor :items, :discount, :total, :last_transaction
@@ -69,3 +67,39 @@ end
 #       self.total = self.total - self.last_transaction
 #     end
 #   end
+
+# Pair Programming Session with Hamza:
+# class CashRegister
+#     attr_accessor :total, :discount 
+
+#     def initialize(discount = 0)
+#         @total = 0
+#         @discount = discount 
+#         @item = [] 
+#     end 
+
+#     def add_item(title, price, quantity = 1)
+#         @last_price = price * quantity 
+#         @total += @last_price 
+#         quantity.times do 
+#             @item << title
+#         end 
+#     end 
+
+#     def apply_discount
+#         if @discount > 0
+#             self.total = self.total - (self.total * @discount/100)
+#             "After the discount, the total comes to $#{self.total}."
+#         else
+#             "There is no discount to apply."
+#         end 
+#     end 
+
+#     def items 
+#         @item
+#     end 
+
+#     def void_last_transaction 
+#         self.total = total - @last_price 
+#     end 
+# end 
